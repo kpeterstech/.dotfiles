@@ -1,0 +1,199 @@
+" -----------------
+" VUNDLE
+" -----------------
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+
+" ----------
+" PLUGIN
+" ----------
+  Plugin 'VundleVim/Vundle.vim'			"Vundle, to manage itself
+  Plugin 'scrooloose/nerdtree'			"Added nerdtree a file manager within vim
+  Plugin 'flazz/vim-colorschemes'		"Color Schemes for Vim
+  Plugin 'vim-airline/vim-airline'		"adds powerbar at the bottom of vim
+  Plugin 'vim-airline/vim-airline-themes'	"adds themes for powerbar
+  Plugin 'easymotion/vim-easymotion'		"allows for jumping to other works quickly with <leader> <leader> w
+  Plugin 'ctrlpvim/ctrlp.vim'			"fuzzy finder for vim
+  Plugin 'elzr/vim-json'			"highlighting for JSON
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+"---------------
+"END VUNDLE
+"---------------
+
+"------------
+" Plugin Options
+"------------
+
+"***********
+"NERDTree
+"***********
+
+" Tell NERDTree to display hidden files on startup
+let NERDTreeShowHidden=1
+
+"opens files into new tab
+let NERDTreeMapOpenInTab='<SPACE>'
+
+" Enables toggle for NERDTree with ctrl+n in normal mode
+map <silent> <C-n> :NERDTreeToggle<CR>
+
+"***********
+"vim-airline
+"***********
+
+" set airline to be on all the time
+set laststatus=2
+
+" tells airline to use powerline fonts
+let g:airline_powerline_fonts = 1
+
+" lowers the time while leaving from insert mode to normal mode
+set ttimeoutlen=10
+
+"************
+"Ctrl-P
+"************
+
+" lets Ctrl-P show hidden files
+let g:ctrlp_show_hidden = 1
+
+"************
+"EazyMotion
+"************
+"
+"you call easy motion by hitting leader twice then w. <leader> <leader> w.
+"This searches forward for the next word
+
+"if you want to search backwards, it is <leader> <leader> F.
+"you then enter in the first letter of the word you want to go to and it shows
+"the optional jump points
+
+"--------------
+"Regular Options
+"--------------
+
+"<CR>        carriage return. It means that you press enter. You put it at the
+"end of a command so it simulates you pressing enter and the command runs
+"<Return>    same as <CR>
+"<Enter>     same as <CR>
+
+"to paste from the keyboard buffer, set vim to paste mode with ":set paste".
+"This will turn off indenting. When done pasting turn it off again with 
+":set nopaste"
+
+"sets encoding to utf-8
+set encoding=utf-8
+
+" adds syntax
+syntax on
+
+" shows commands on the bottom right
+set showcmd
+
+set mouse=a
+
+" map the leader key to ","
+let mapleader = ","
+
+"enables tabs within vim
+nnoremap tn	:tabnew<CR>
+
+nnoremap tk	:tabnext<CR>
+nnoremap tj	:tabprev<CR>
+
+nnoremap th	:tabfirst<CR>
+nnoremap tl	:tablast<CR>
+
+" adds numbering on the left side, both relative and absolute
+set number
+set relativenumber
+
+" turns on indenting
+set autoindent
+set smartindent
+
+" Disable swp files
+set noswapfile
+
+" gives 256 color schemes
+set term=screen-256color
+
+"quick pairs - while in insert mode, press leader than the character to create
+"both sides and place the cursor inbetween them
+imap <leader>' ''<ESC>i
+imap <leader>" ""<ESC>i
+imap <leader>( ()<ESC>i
+imap <leader>[ []<ESC>i
+imap <leader>{ {}<ESC>i
+
+" gO to create a new line below the cursor in normal mode with going into
+" insert mode
+nnoremap g<C-O> o<ESC>k
+
+" g<Ctrl+O> to create a new line above the cursor, but without going into
+" insert mode.
+nnoremap gO O<ESC>j
+
+" enables cross copy/pasting with system clipboard
+set clipboard=unnamedplus
+
+"if you are pasting from the clipboard set vim into paste mode with
+":set paste. This tells vim not to do indentations so your code wont get
+"messed up. To turn vim back into normal mode use :set nopaste
+
+" turns on highlighting of words when searching
+set hlsearch
+
+" case insensitive searching
+set ignorecase
+
+" case-sensitive if expresson contains a capital letter
+set smartcase
+
+" turns the highlight background color light blue, only for vim in terminal
+hi Search ctermbg=LightBlue
+
+" toggle invisible characters
+set list
+set listchars=tab:\ \ ,eol:¬,trail:⋅
+
+"sets files to ignore
+set wildignore+=*.bmp,*.gif,*.jpg,*.webm,*.mp4,*.png,*.swp,*.tmp,.git,.DS_Store
+
+"adds PEP8 indentation for python
+
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+"\ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+
+"adds indentation for js, html and css
+
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2

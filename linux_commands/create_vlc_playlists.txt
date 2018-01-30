@@ -1,0 +1,35 @@
+The easiest way to create a vlc playlist is to put the absolute paths to the media you want to hear/watch all in one file and save is as a m3u. m3u files are what vlc uses as a playlist, and vlc loads the files line by line in the order that they are saved in the m3u.
+
+Example:
+--------------
+test.m3u:
+exampleSong1.mp3
+path/to/next/song.flac
+another/example/path/song3.mp4
+~/Videos/exampleVideo.mkv
+
+to play the playlist above all you would need to do is enter in "vlc test.m3u" and the music/videos would be loaded into a playlist in the order above. 
+
+FINDING THE ABSOLUTE FILE PATH:
+--------------------------------
+The easiest way to get the absolute path for a file is to just use 
+
+"readlink -f $FILENAME >> playlistName.m3u"
+
+This will get the absolute path for the file, then append it to your desired playlist. The playlist does not have to be in the same directory. You can tell it to save where ever.
+
+to search a directory and move all files to a playlist you can use a command like this:
+
+"find . -type f -iname "*.mp4" -exec readlink -f {} >> playlist.m3u \;"
+
+what the above command does it is looks in the current directory, and all sub directories for files that have the ending of .mp4, then it gets that files absolute path and appends it to the file "playlist.m3u"
+
+-type f: says that is needs to be a file
+-iname: is a case insensitive search
+"*.mp4": looks for anything that ends in .mp4. the * is a wild card
+-exec: executes what follows on all the files that meet the requirements before it
+readlink -f: gets the absolute path for each file
+{}: this acts as a place holder. So if a file meeting the parameters is met, it will be place in the curly brackets so it can be used
+>>: appends the output into a file
+playlist.m3u: is the playlist that gathers the absolute paths for each file found
+\; : executes the command

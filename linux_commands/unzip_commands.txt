@@ -1,0 +1,3 @@
+looks through the current folder and unzips the .zip to a directory with the name of the zip file. Example: this_is_a_test.zip > this_is_a_test/
+
+for f in *.zip; do unzip -d "${f%*.zip}" "$f"; done

@@ -1,0 +1,23 @@
+wget -r 1 -nd -N --accept-regex=src/ -A jpg,jpeg,gif,png https://example.net/page.html
+
+-r = recursive (goes down rabit hole following links looking for downloads. Default depth 5)
+-nd = no directory (does not make directories. Puts all downloads in current directory)
+-N = no cobbler (when downloading pictures/media it skips duplicates. If it finds duplicate pics it skips the second copy)
+-A = accept (tells what files you are looking for. It skips downloading what is not listed under accepted. Can split it up with a ,
+this command also waits and listens for more media to downloads. Keeps running
+
+wget -nd -r -l 2 -A jpg,jpeg,png,gif http://t.co
+
+-l = level (can manually specify what level you want it to stop at)
+
+wget -nd -H -p -A jpg,jpeg,png,gif -e robots=off example.tumblr.com/page/{1..2}
+
+-H = span hosts (if the link takes you to a different URL that is not that same path of the current URL it allows you to follow it and continue downloading. Without it it will ignore all URLs that are different)
+-e robots=off (-e means execute, robots=off tells wget to ignore robots.txt files. Adds more stress to the server
+
+wget -w 10 --random-wait
+
+-w = wait (tells wget how many seconds to wait before downloading the next file)
+--random-wait = makes wget wait between 0.5 and 1.5 seconds before downloading the next file. (good to do if the website blocks mass downloads as fast as possible. If there is a -w before --random-wait it takes that number than adds a difference of 0.5 and 1.5 seconds to it. Example= -w 10 --random-wait == 10.5-11.5 seconds)
+
+

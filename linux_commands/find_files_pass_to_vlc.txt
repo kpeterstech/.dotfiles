@@ -1,0 +1,9 @@
+find . -iname '*<keyword>*' -print0 | xargs -0 vlc &
+
+find . -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -f2- -d" "
+
+For a huge tree, it might be hard for sort to keep everything in memory.
+%T@ gives you the modification time like a unix timestamp
+sort -n sorts numerically
+tail -1 takes the last line (highest timestamp)
+cut -f2 -d" " cuts away the first field (the timestamp) from the output.

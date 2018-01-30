@@ -1,0 +1,6 @@
+for f in $(ls | nl | head -[number desired +1]); do mv $f [destination]; done
+
+ls - lists all the files
+nl - puts numbers next to the files
+head - takes the numbers from nl and then takes the top files desired
+

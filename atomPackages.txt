@@ -1,0 +1,27 @@
+atomclock
+vim-mode-plus
+linter-javac
+autocomplete-python
+file-icons
+minimap
+python-autopep8 (sudo pip install autopep8)
+linter-flake8 (sudo pip install flake8)
+atom-alignment
+highlight-selected
+minimap-highlight-selected
+pigments
+markdown-preview
+atom-beautify (need to apt-get install uncrustify for java)
+platformIO IDE Terminal
+atom-live-server package
+
+StyleSheetCommands:
+--------------------
+open up the keymap.cson (under "edit" > "keymaps"
+
+to create new files from the editor add this file to the end of the keymap options
+
+'body':
+  'ctrl-alt-n': 'tree-view:add-file'
+
+this allows you to press "ctrl-alt-n" to create a new file

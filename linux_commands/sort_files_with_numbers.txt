@@ -1,0 +1,8 @@
+find src -type f | while read -r filename; do ((++cnt)); cp "$filename" dest/"$(printf "%03d_%s" "$cnt" "${filename##*/}")"; done
+
+where src and dest are the source and destination directories. Note that if the destination directory is a subdirectory of the source directory as in your example you're probably going to run into issues with find finding the copied files, so you should probably exclude the destination directory from find in that case.
+Adjust the %03d to be as wide as necessary to accommodate the total number of files
+
+read varname reads a line from stdin into the variable named varname. The -r flag tells it not to honor backslash escapes, and to treat the backslash as a regular character, which is extra insurance against oddly named files.
+printf takes a format string, which contains text and format specifiers, and a set of corresponding arguments that are substituted for each specifier. %d is the format specifier for a decimal integer, corresponding to the first argument, $cnt. The format specifiers can be customized with various options, in this case 03 means a field width of three with zero-padding. The %s specifier expects a string and corresponds to the filename argument.
+${filename} is expanding the variable named filename. There are many additional options that you can apply to this base form of expansion. Something of the form ${filename##foo} means treat "foo" like a glob/wildcard pattern, and if it matches a prefix of the string being expanded, remove that portion. In this case the pattern is */ which matches and removes any leading path components, leaving just the filename. Open up the bash man page and search for the section titled "Parameter Expansion" for details.
