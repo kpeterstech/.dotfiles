@@ -87,41 +87,6 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-########## ANTIGEN ###########
-
-# source ~/.dotfiles/antigen/antigen.zsh
-
-# Load the oh-my-zsh's library.
-# antigen use oh-my-zsh
-
-########## BUNDLES #############
-# antigen bundles <<EOBUNDLES
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-# alexrochas/zsh-extract
-# 
-# # Syntax highlighting bundle.
-# zsh-users/zsh-syntax-highlighting
-# 
-# # Guess what to install when running an unknown command.
-# command-not-found
-# 
-# #Add sudo at start of CLI when you tap ESC x 2
-# sudo
-# 
-# #Add git compatability
-# git
-# 
-# EOBUNDLES
-########### END BUNDLES #############
-
-# Load the theme.
-#antigen theme agnoster
-# antigen theme bhilburn/powerlevel9k powerlevel9k
-
-# Tell antigen that you're done.
-# antigen apply
-
 ########## ALIASES ##########
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -131,7 +96,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
- 
+
 source ~/.dotfiles/zsh/aliases
 
 export PATH=/sbin:/bin:/usr/bin:$HOME/bin:/usr/local/bin:
