@@ -1,4 +1,5 @@
-alias ll='ls -lh --color=tty'
+alias ll='ls -lhv --color=tty'
+alias ls='ls -v --color=tty'
 alias lla='la -lah --color=auto'
 alias ld='ls -ld */ --color=auto'
 alias grep='grep --color=auto'
