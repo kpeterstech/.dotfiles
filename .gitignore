@@ -1,4 +1,4 @@
 # files and folders to ignore
 
-atomPackages.txt
-symlinks.sh
+private/
+all_scripts/
