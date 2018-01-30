@@ -1,1 +1,4 @@
+# files and folders to ignore
+
 atomPackages.txt
+symlinks.sh
