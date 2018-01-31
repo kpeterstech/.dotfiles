@@ -23,7 +23,7 @@ apt-get -y install \
 	unzip \
 	build-essential \
 	openssh-server \
-	p7zip \
+	p7zip-full \
 	python3-pip \
 	tree \
 	fdupes \

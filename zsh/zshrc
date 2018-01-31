@@ -8,7 +8,7 @@
 export TERM="xterm-256color"
 
 #Powerlevel9k settings
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time )
 
 #sets the default editor to vim

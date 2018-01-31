@@ -4,7 +4,7 @@ alias lla='la -lah --color=auto'
 alias ld='ls -ld */ --color=auto'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
-alias python=python3
+alias python=python3.6
 alias pip=pip3
 alias mv="mv -v"
 alias cp="cp -v"
