@@ -50,6 +50,8 @@ do
 	elif [[ $extension == "video/quicktime" ]]; then
 		mv $file $basename.mov
 
+	elif [[ $extension == "video/x-m4v" ]]; then
+		mv $file $basename.m4v
 
 
 	else
