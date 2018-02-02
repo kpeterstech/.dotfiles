@@ -37,6 +37,11 @@ pip3 install --upgrade youtube_dl
 #upgrades machine
 apt-get upgrade -y
 
+# remove amazon from ubuntu
+rm /usr/share/applications/ubuntu-amazon-default.desktop
+rm /usr/share/unity-webapps/userscripts/unity-webapps-amazon/Amazon.user.js
+rm /usr/share/unity-webapps/userscripts/unity-webapps-amazon/manifest.json
+
 #add powerline symbols to user for sexy terminal
 /bin/bash ~/.dotfiles/powerline/powerline_install.sh
 
