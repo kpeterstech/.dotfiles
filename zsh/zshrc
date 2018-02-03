@@ -105,7 +105,7 @@ source ~/.dotfiles/zsh/aliases
 # the format is VARIABLE_NAME then = then the value. One per line
 # Ex. DB_USER="my_db_user"
 # Ex. DB_PASS="db_pass_123!"
-source ~/.secrets
+source ~/.dotfiles/private/.secrets
 
 export PATH=/sbin:/bin:/usr/bin:$HOME/bin:/usr/local/bin:
 source /home/beard/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
