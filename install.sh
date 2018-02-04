@@ -32,6 +32,9 @@ apt-get -y install \
 # install latest version of pip
 pip3 install --upgrade pip
 
+# install venv for python3
+apt-get install python3-venv
+
 # install youtube_dl via pip
 pip3 install --upgrade youtube_dl
 

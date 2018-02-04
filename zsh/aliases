@@ -1,3 +1,6 @@
+# to bypass an aliased command pre-pend it with "\"
+# Ex: \df
+
 # let there be color
 alias ll='ls -lhv --color=tty'
 alias ls='ls -v --color=tty'
@@ -19,6 +22,9 @@ alias rm="rm -v"
 # "rm -rf" is too long to type
 alias rr="rm -rf"
 
+# create dir with necessary paths
+alias mkdir="mkdir -p"
+
 # display sizes in human format
 alias df="df -h"
 alias ddu='du -sh'
@@ -35,6 +41,7 @@ alias dot='cd ~/.dotfiles'
 
 # git shortcuts
 alias gs="git status"
-alias ga="git add -A"
+alias ga="git add"
+alias gaa="git add -A"
 alias gc="git commit"
 alias gp="git push"
