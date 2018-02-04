@@ -1,6 +1,13 @@
 # to bypass an aliased command pre-pend it with "\"
 # Ex: \df
 
+# convenience aliases for editing configs
+alias ev='vim ~/.vimrc'
+alias et='vim ~/.tmux.conf'
+alias ez='vim ~/.zshrc'
+alias ea='vim ~/.dotfiles/zsh/aliases'
+alias sz='source ~/.zshrc'
+
 # let there be color
 alias ll='ls -lhv --color=tty'
 alias ls='ls -v --color=tty'
@@ -8,6 +15,9 @@ alias lla='la -lah --color=auto'
 alias ld='ls -ld */ --color=auto'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
+
+# sort files by size with larges on the bottom in human readable format
+alias largos='ls -largoSh'
 
 # commands for python
 alias python=python3.6
@@ -27,14 +37,11 @@ alias mkdir="mkdir -p"
 
 # display sizes in human format
 alias df="df -h"
-alias ddu='du -sh'
+alias du='du -sh'
 
-# convenience aliases for editing configs
-alias ev='vim ~/.vimrc'
-alias et='vim ~/.tmux.conf'
-alias ez='vim ~/.zshrc'
-alias ea='vim ~/.dotfiles/zsh/aliases'
-alias sz='source ~/.zshrc'
+# quick system updates
+alias update='sudo apt update && sudo apt upgrade'
+alias updatey='sudo apt -y update && sudo apt -y upgrade'
 
 # quickly move to .dotfiles directory
 alias dot='cd ~/.dotfiles'
@@ -45,3 +52,24 @@ alias ga="git add"
 alias gaa="git add -A"
 alias gc="git commit"
 alias gp="git push"
+alias gpom="git push origin master"
+
+# quickly play media
+alias flac='vlc *.flac'
+alias mp3='vlc *.mp3'
+alias mp4='vlc *.mp4'
+alias mkv='vlc *.mkv'
+alias webm='vlc *.webm'
+alias eogg='eog *'
+alias png='eog *.png'
+alias jpeg='eog *.jpeg'
+alias jpg='eog *.jpg'
+
+# resume wget by default
+alias wget='wget -c'
+
+# opens vim in with sudo
+alias suvim='sudo vim'
+
+# shows how many files are in the current directory
+alias num='ls -1 | wc -l'
