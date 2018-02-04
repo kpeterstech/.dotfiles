@@ -98,7 +98,7 @@ let g:ctrlp_show_hidden = 1
 "<Enter>     same as <CR>
 
 "to paste from the keyboard buffer, set vim to paste mode with ":set paste".
-"This will turn off indenting. When done pasting turn it off again with 
+"This will turn off indenting. When done pasting turn it off again with
 ":set nopaste"
 
 "sets encoding to utf-8
@@ -139,7 +139,7 @@ set noswapfile
 set term=screen-256color
 
 "quick pairs - while in insert mode, press leader than the character to create
-"both sides and place the cursor inbetween them
+"both sides and place the cursor in between them
 imap <leader>' ''<ESC>i
 imap <leader>" ""<ESC>i
 imap <leader>( ()<ESC>i

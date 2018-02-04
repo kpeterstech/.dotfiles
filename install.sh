@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# place folder in home directory.
 # run as root for first time install
 
 # update from repositories
@@ -43,19 +44,27 @@ rm /usr/share/unity-webapps/userscripts/unity-webapps-amazon/Amazon.user.js
 rm /usr/share/unity-webapps/userscripts/unity-webapps-amazon/manifest.json
 
 # add powerline symbols to user for sexy terminal
-/bin/bash ~/.dotfiles/startup_scripts/powerline_install.sh
+/bin/bash ~/.dotfiles/install_scripts/powerline_install.sh
 
 # download github repos
-/bin/bash ~/.dotfiles/startup_scripts/github.sh
+/bin/bash ~/.dotfiles/install_scripts/github.sh
 
 # add symbolic links for zshrc,vimrc,tmux.conf
-/bin/bash ~/.dotfiles/startup_scripts/symlinks.sh
+/bin/bash ~/.dotfiles/install_scripts/symlinks.sh
 
 # adds local 2.5 HDD if on home computer
-/bin/bash ~/.dotfiles/private/.2\.5_HDD_add.sh
+if [[ -e ~/.dotfiles/private/.2.5_HDD_add.sh ]]; then
+		/bin/bash ~/.dotfiles/private/.2\.5_HDD_add.sh
+else
+		echo "Script to install 2.5 Tb HDD not found"
+fi
 
 # adds access to local server if on same network
-/bin/bash ~/.dotfiles/private/.server_add.sh
+if [[ -e ~/.dotfiles/private/.server_add.sh ]]; then
+		/bin/bash ~/.dotfiles/private/.server_add.sh
+else
+		echo "Script to add server not found"
+fi
 
 # prompt for a reboot
 echo ""

@@ -1,14 +1,25 @@
+# let there be color
 alias ll='ls -lhv --color=tty'
 alias ls='ls -v --color=tty'
 alias lla='la -lah --color=auto'
 alias ld='ls -ld */ --color=auto'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
+
+# commands for python
 alias python=python3.6
+alias python3=python3.5
 alias pip=pip3
+
+# more information, the better. (-v = verbose)
 alias mv="mv -v"
 alias cp="cp -v"
 alias rm="rm -v"
+
+# "rm -rf" is too long to type
+alias rr="rm -rf"
+
+# display sizes in human format
 alias df="df -h"
 alias ddu='du -sh'
 
@@ -17,3 +28,7 @@ alias ev='vim ~/.vimrc'
 alias et='vim ~/.tmux.conf'
 alias ez='vim ~/.zshrc'
 alias ea='vim ~/.dotfiles/zsh/aliases'
+alias sz='source ~/.zshrc'
+
+# quickly move to .dotfiles directory
+alias dot='cd ~/.dotfiles'

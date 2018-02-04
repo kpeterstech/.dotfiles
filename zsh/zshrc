@@ -2,7 +2,7 @@
 #export PATH=$HOME/bin:/usr/local/bin:/$HOME/scripts
 
 # Path to your oh-my-zsh installation.
-  export ZSH=~/.dotfiles/zsh/oh-my-zsh
+export ZSH=~/.dotfiles/zsh/oh-my-zsh
 
 # Sets terminal to use 256 color if it supports it
 export TERM="xterm-256color"
@@ -100,12 +100,14 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.dotfiles/zsh/aliases
 
-# sources a file in the home dir that contains passwords and other confidential
-# information. This is so it is not leaked while uploading this .zshrc file to git.
-# the format is VARIABLE_NAME then = then the value. One per line
+# if .secrets exists it sources the file in the private dir that contains passwords
+# and other confidential information.
+# the format is VARIABLE_NAME=value. One per line
 # Ex. DB_USER="my_db_user"
 # Ex. DB_PASS="db_pass_123!"
-source ~/.dotfiles/private/.secrets
+if [[ -e ~/.dotfiles/private/.secrets ]]; then
+    source ~/.dotfiles/private/.secrets
+fi
 
 export PATH=/sbin:/bin:/usr/bin:$HOME/bin:/usr/local/bin:
 source /home/beard/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

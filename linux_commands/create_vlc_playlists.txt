@@ -1,4 +1,5 @@
-The easiest way to create a vlc playlist is to put the absolute paths to the media you want to hear/watch all in one file and save is as a m3u. m3u files are what vlc uses as a playlist, and vlc loads the files line by line in the order that they are saved in the m3u.
+The easiest way to create a vlc playlist is to put the absolute paths to the media you want to hear/watch all in one file and save is as a m3u.
+m3u files are what vlc uses as a playlist, and vlc loads the files line by line in the order that they are saved in the m3u.
 
 Example:
 --------------
@@ -8,11 +9,11 @@ path/to/next/song.flac
 another/example/path/song3.mp4
 ~/Videos/exampleVideo.mkv
 
-to play the playlist above all you would need to do is enter in "vlc test.m3u" and the music/videos would be loaded into a playlist in the order above. 
+to play the playlist above all you would need to do is enter in "vlc test.m3u" and the music/videos would be loaded into a playlist in the order above.
 
 FINDING THE ABSOLUTE FILE PATH:
 --------------------------------
-The easiest way to get the absolute path for a file is to just use 
+The easiest way to get the absolute path for a file is to just use
 
 "readlink -f $FILENAME >> playlistName.m3u"
 

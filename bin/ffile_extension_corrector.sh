@@ -11,9 +11,9 @@ do
 	# $NF in awk looks at the last column, --mime-type show the type of file and nothing else after it
 	extension=`file --mime-type $file | awk '{print tolower($NF)}'`
 
-	# %.* - % means start from the end of the file and work forwards, . is what to look for (start and end
-	# and work forward until you find a . then * selects everything after the . (in this case if looks for
-	# the file extensions. After the extension is found, the % removes it, stripping away the file extension
+	# %.* - % means start from the end of the file and work forwards, . is what to look for (start at end
+	# and work forward until you find a .) then * selects everything after the . (in this case if looks for
+	# the file extensions). After the extension is found, the % removes it, stripping away the file extension
 	basename=${file%.*}
 
 

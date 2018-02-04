@@ -6,18 +6,18 @@
 
 # Variables
 
-dir=~/.dotfiles   #downloaded dotfile directory
-olddir=~/.dotfiles_old   #where all the original rc files (if there were any) are moved in case an error occures
-files="bashrc vimrc zshrc oh-my-zsh tmux.conf"  #list of the files that will be targeted
+dir=~/.dotfiles   # downloaded dotfile directory
+olddir=~/.dotfiles_old   # where all the original rc files (if there were any) are moved in case an error occures
+files="bashrc vimrc zshrc oh-my-zsh tmux.conf"  # list of the files that will be targeted
 
-#create .dotfiles_old directory
+# create .dotfiles_old directory
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
 echo "...done"
 
-#moving old dotfiles to .dotfiles_old directory
+# moving old dotfiles to .dotfiles_old directory
+echo "Moving any exisiting dotfiles from ~ to $olddir"
 for file in $files; do
-	echo "Moving any exisiting dotfiles from ~ to $olddir"
 	mv ~/.$file ~/.dotfiles_old/
 done
 
