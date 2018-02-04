@@ -32,3 +32,8 @@ alias sz='source ~/.zshrc'
 
 # quickly move to .dotfiles directory
 alias dot='cd ~/.dotfiles'
+
+# git shortcuts
+alias gs="git status"
+alias ga="git add -A"
+alias gc="git commit"
