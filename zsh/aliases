@@ -19,6 +19,9 @@ alias egrep='egrep --color=auto'
 # sort files by size with larges on the bottom in human readable format
 alias largos='ls -largoSh'
 
+# list files with newest files on bottom
+alias lltr='ll -tr'
+
 # commands for python
 alias python=python3.6
 alias python3=python3.5
@@ -54,16 +57,22 @@ alias gc="git commit"
 alias gp="git push"
 alias gpom="git push origin master"
 
+# quickly attach to session with tmux
+alias tmuxa='tmux attach -t '
+
 # quickly play media
 alias flac='vlc *.flac'
 alias mp3='vlc *.mp3'
 alias mp4='vlc *.mp4'
 alias mkv='vlc *.mkv'
 alias webm='vlc *.webm'
+alias mov='vlc *.mov'
+alias vvlc='vlc *'
 alias eogg='eog *'
 alias png='eog *.png'
 alias jpeg='eog *.jpeg'
 alias jpg='eog *.jpg'
+alias gif='eog *.gif'
 
 # resume wget by default
 alias wget='wget -c'

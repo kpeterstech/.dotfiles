@@ -9,6 +9,8 @@ apt-get update
 # install all desired programs.
 apt-get -y install \
 	sudo \
+	# need vim-gtk for vim to be able to us system clipboard
+	vim-gtk \
 	vim \
 	zsh \
 	tmux \
