@@ -34,6 +34,7 @@ alias rm="rm -v"
 
 # "rm -rf" is too long to type
 alias rr="rm -rf"
+alias surr="sudo rm -rf"
 
 # create dir with necessary paths
 alias mkdir="mkdir -p"
