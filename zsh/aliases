@@ -43,20 +43,19 @@ alias mkdir="mkdir -p"
 alias df="df -h"
 alias du='du -sh'
 
-# quick system updates
-alias update='sudo apt update && sudo apt upgrade'
-alias updatey='sudo apt -y update && sudo apt -y upgrade'
-
 # quickly move to .dotfiles directory
 alias dot='cd ~/.dotfiles'
 
 # git shortcuts
-alias gs="git status"
 alias ga="git add"
 alias gaa="git add -A"
+alias gb="git branch"
+alias gbd="git branch --delete"
 alias gc="git commit"
+alias gco="git checkout"
 alias gp="git push"
 alias gpom="git push origin master"
+alias gs="git status"
 
 # quickly attach to session with tmux
 alias tmuxa='tmux attach -t '

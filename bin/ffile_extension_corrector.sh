@@ -51,7 +51,7 @@ do
 		mv $file $basename.mov
 
 	elif [[ $extension == "video/x-m4v" ]]; then
-		mv $file $basename.m4v
+		mv $file $basename.mp4
 
 
 	else
