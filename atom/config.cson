@@ -1,0 +1,30 @@
+"*":
+  "atom-beautify":
+    html: {}
+    python:
+      beautify_on_save: true
+  "atom-clock":
+    dateFormat: "MMMM Do, dddd, h:mm a"
+    showClockIcon: true
+  "autocomplete-plus":
+    useCoreMovementCommands: false
+  core:
+    packagesWithKeymapsDisabled: []
+    telemetryConsent: "no"
+  editor:
+    fontSize: 16
+    scrollPastEnd: true
+  "exception-reporting":
+    userId: "21510a71-4d6d-4175-ae6f-03b8bb365e85"
+  "linter-flake8":
+    ignoreErrorCodes: [
+      "E501"
+    ]
+  "linter-ui-default":
+    showPanel: true
+  minimap:
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+  welcome:
+    showOnStartup: false

@@ -7,6 +7,7 @@ alias et='vim ~/.tmux.conf'
 alias ez='vim ~/.zshrc'
 alias ea='vim ~/.dotfiles/zsh/aliases'
 alias sz='source ~/.zshrc'
+alias func='vim ~/.dotfiles/zsh/functions'
 
 # let there be color
 alias ll='ls -lhv --color=tty'
