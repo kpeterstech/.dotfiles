@@ -1,0 +1,19 @@
+**Find the total size of all files that match a pattern**
+
+find . -iname "*<pattern>*" -exec du -ch {} +
+
+find - the command that is used
+
+. - search the current directory and all sub directories
+
+-iname - the "i" in iname means case insensitive. To have a case sensitive match just use -name
+
+"*<pattern>*" - What is between the quotes (") is what find looks for. The astricks (*) are wild cards. When placed before and after the search pattern it means anything that comes before and after. You dont need them and can structure your pattern however you want
+
+-exec - on the files that match and are found execute the following command on it
+
+du -ch - du is a command that estimates file usage. -c stand for grand total and h stand for human readable
+
+{} - this is a place holder that the matched file will be put into. This way you can control where the matched file is placed for command exectution
+
++ - this appends the result of du -ch. How this works in practice is that each file that is found will print to the screen with its individual size, then when find is done searching, the total will be printed at the end

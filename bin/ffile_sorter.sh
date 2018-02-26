@@ -28,6 +28,10 @@ do
 		mkdir pics 2> /dev/null
 		mv $file pics
 
+	elif [[ $extension == "bmp" ]]; then
+		mkdir pics 2> /dev/null
+		mv $file pics
+
 	elif [[ $extension == "gif" ]]; then
 		mkdir gifs 2> /dev/null
 		mv $file gifs
@@ -57,6 +61,10 @@ do
 		mkdir vids 2> /dev/null
 		mv $file vids
 
+	elif [[ $extension == "flv" ]]; then
+		mkdir vids 2> /dev/null
+		mv $file vids
+
 	elif [[ $extension == "mpg" ]]; then
 		mkdir vids 2> /dev/null
 		mv $file vids
@@ -64,5 +72,10 @@ do
 	elif [[ $extension == "mp3" ]]; then
 		mkdir audio 2> /dev/null
 		mv $file audio
+
+	elif [[ $extension == "wav" ]]; then
+		mkdir audio 2> /dev/null
+		mv $file audio
+
 fi
 done <<< $(find . -maxdepth 1 -type f)

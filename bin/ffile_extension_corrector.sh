@@ -38,14 +38,14 @@ do
 	elif [[ $extension == "video/x-matroska" ]]; then
 		mv $file $basename.mkv
 
-	elif [[ $extension == "image/gif" ]]; then
-		mv $file $basename.gif
-
 	elif [[ $extension == "video/x-ms-asf" ]]; then
 		mv $file $basename.wmv
 
 	elif [[ $extension == "video/x-msvideo" ]]; then
 		mv $file $basename.avi
+
+	elif [[ $extension == "video/x-flv" ]]; then
+		mv $file $basename.flv
 
 	elif [[ $extension == "video/quicktime" ]]; then
 		mv $file $basename.mov
@@ -53,6 +53,14 @@ do
 	elif [[ $extension == "video/x-m4v" ]]; then
 		mv $file $basename.mp4
 
+	elif [[ $extension == "video/x-ms-bmp" ]]; then
+		mv $file $basename.bmp
+
+	elif [[ $extension == "image/gif" ]]; then
+		mv $file $basename.gif
+
+	elif [[ $extension == "video/x-wav" ]]; then
+		mv $file $basename.wav
 
 	else
 		echo "$file is not a normal file. Its type is $extension"
