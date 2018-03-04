@@ -1,0 +1,28 @@
+**Grouping**
+You can use "()" to group patterns. To use those patterns in the renaming portion you use $1, $2, etc for the number of groupings you have
+
+rename 's/(firstName) - (lastName)/$2 - $1/'
+
+(firstName) - this would group whatever pattern is matched between these first parens "()"
+(lastName) - Same as (firstName) but for a different grouping
+$2 - this matches the second grouping. In this case (lastName)
+$1 - this matches the first grouping. In this case (firstName)
+
+The above command would switch firstName and lastName positions
+
+**Negative Lookahed**
+You can use a negative lookahead to find patterns that you do not want to match. You do this with parens "()" then a ?! then the pattern you dont want to match.
+
+Example: You want to find words where the letter "q" is NOT followed by a "u"
+
+q(?!u)
+
+the lookahead parens do not act as grouping. However you can place any other other regular expression or groupings within the lookahead
+
+**Positive Lookahed**
+Same as a negative lookahead but you use an equal sign "=" instead of an exclamation point "!"
+
+Example: You want to find words where the letter "q" is followd by a "u"
+
+q(?=u)
+
