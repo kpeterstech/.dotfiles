@@ -59,6 +59,7 @@ alias gc="git commit"
 alias gco="git checkout"
 alias gp="git push"
 alias gpom="git push origin master"
+alias gplom="git pull origin master"
 alias gs="git status"
 
 # quickly attach to session with tmux
