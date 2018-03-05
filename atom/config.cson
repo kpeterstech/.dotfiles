@@ -26,5 +26,13 @@
     plugins:
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
+  "platformio-ide-terminal":
+    ansiColors:
+      normal:
+        blue: "#16e90d"
+        magenta: "#3fdf12"
+      zBright:
+        brightBlue: "#26ed16"
+        brightMagenta: "#18df0f"
   welcome:
     showOnStartup: false

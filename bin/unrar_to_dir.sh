@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# unrar_to_dir searches the current folder (non recursivly) for .rar files. When it finds a .rar file 
-# it creates a directory with the same name (but with the .rar extension). It then takes the original
-# .rar file and move it into the newly created directory
+# unrar_to_dir searches the current folder (non recursivly) for .rar files. When it finds a .rar file
+# it creates a directory with the same name (but without the .rar extension). It then takes the original
+# .rar file and moves it into the newly created directory
 
 IFS=
 while read -r file

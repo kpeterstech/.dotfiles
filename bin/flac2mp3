@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 [[ $# == 0 ]] && set -- *.flac
 for f; do
   ffmpeg -i "$f" -qscale:a 0 "${f[@]/%flac/mp3}"

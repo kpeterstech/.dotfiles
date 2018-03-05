@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # IFS determins where to seperate the input. By default it seperate on spaces, tabs and newlines
 # setting the IFS variable to a new line makes it so that is it will move to the next file only when
