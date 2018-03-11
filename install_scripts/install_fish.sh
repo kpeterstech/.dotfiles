@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# install fish PPAA
+# install fish PPA
 sudo sh -c 'apt-add-repository ppa:fish-shell/release-2 -y'
 sudo sh -c 'apt -y update'
 sudo sh -c 'apt -y install fish'
@@ -20,4 +20,3 @@ sudo sh -c 'apt -y install fonts-powerline'
 omf install bobthefish
 
 chsh -s $(which fish)
-
