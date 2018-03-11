@@ -9,6 +9,11 @@ echo "Please enter in your password"
 
 sudo sh -c "echo 'Thank you!'"
 
+echo "First off, which shell would you like to use? (it will be set to your default shell)"
+echo "1) zsh"
+echo "2) fish"
+read SHELL_TYPE
+
 # update from repositories
 sudo sh -c 'apt-get update'
 
@@ -18,7 +23,6 @@ sudo sh -c 'apt-get -y install \
 	# need vim-gtk for vim to be able to us system clipboard
 	vim-gtk \
 	vim \
-	zsh \
 	tmux \
 	git \
 	make \
@@ -27,13 +31,13 @@ sudo sh -c 'apt-get -y install \
 	curl \
 	guake \
 	python-pip \
+	python3-pip \
 	unrar-free \
 	vlc \
 	unzip \
 	build-essential \
 	openssh-server \
 	p7zip-full \
-	python3-pip \
 	tree \
 	fdupes \
 '
@@ -58,28 +62,37 @@ rm /usr/share/unity-webapps/userscripts/unity-webapps-amazon/manifest.json
 # add powerline symbols to user for sexy terminal
 sudo sh -c '/bin/bash ~/.dotfiles/install_scripts/powerline_install.sh'
 
+# add symbolic links for vimrc,tmux.conf,~/bin
+sudo sh -c '/bin/bash ~/.dotfiles/install_scripts/symlinks.sh'
+
 # download github repos
 sudo sh -c '/bin/bash ~/.dotfiles/install_scripts/github.sh'
 
-# add symbolic links for zshrc,vimrc,tmux.conf
-sudo sh -c '/bin/bash ~/.dotfiles/install_scripts/symlinks.sh'
-
 # adds local 2.5 HDD if on home computer
 if [[ -e ~/.dotfiles/private/.2.5_HDD_add.sh ]]; then
-		sudo sh -c '/bin/bash ~/.dotfiles/private/.2\.5_HDD_add.sh'
+	sudo sh -c '/bin/bash ~/.dotfiles/private/.2\.5_HDD_add.sh'
 else
-		echo "Script to install 2.5 TB HDD not found"
+	echo "Script to install 2.5 TB HDD not found"
 fi
 
 # adds access to local server if on same network
 if [[ -e ~/.dotfiles/private/.server_add.sh ]]; then
-		sudo sh -c '/bin/bash ~/.dotfiles/private/.server_add.sh'
+	sudo sh -c '/bin/bash ~/.dotfiles/private/.server_add.sh'
 else
-		echo "Script to add server not found"
+	echo "Script to add server not found"
 fi
 
-chsh -s $(which zsh)
+# install and configure the user shell that was selected above
+if [[ SHELL_TYPE -eq 1 ]]; then
+	bash ~/.dotfiles/install_scripts/install_zsh.sh
 
+elif [[ SHELL_TYPE -eq 2 ]]; then
+	bash ~/.dotfiles/install_scripts/install_fish.sh
+
+else 
+	bash ~/.dotfiles/install_scripts/install_zsh.sh
+
+fi
 # prompt for a reboot
 echo ""
 echo "================="

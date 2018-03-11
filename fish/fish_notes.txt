@@ -1,0 +1,24 @@
+**Aliases**
+to create aliases like you would with bash/zsh all you need to type is the following:
+alias <command>='<what you want command to be>'
+
+after you do this run:
+funcsave <command>
+
+funcsave will save the command and allow you to use it in any other fish instance/future instance.
+What funcsave does is it saves the command as a function in ~/.config/fish/functions. If you navigate
+to that directory you will see there is a new file called <command>.fish. Inside that file is the
+alias you created. You can manually create functions as you need them/want them. Once you have manually created the function with the format of <name>.fish you can call the function by typing <name> into the terminal.
+
+Example:
+
+alias mp4='vlc *.mp4'
+funcsave mp4
+*a new file called mp4.fish is saved in ~/.config/fish/functions*
+
+cat ~/.config/fish/functions/mp4.fish
+
+# Defined in - @ line 0
+function mp4 --description 'alias mp4=vlc *.mp4'
+	vlc *.mp4 $argv;
+end

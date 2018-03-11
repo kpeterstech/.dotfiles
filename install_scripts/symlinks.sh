@@ -8,7 +8,7 @@
 
 dir=~/.dotfiles   # downloaded dotfile directory
 olddir=~/.dotfiles_old   # where all the original rc files (if there were any) are moved in case an error occures
-files="bashrc vimrc zshrc oh-my-zsh tmux.conf"  # list of the files that will be targeted
+files="bashrc vimrc zsh oh-my-zsh tmux.conf"  # list of the files that will be targeted
 
 # create .dotfiles_old directory
 echo "Creating $olddir for backup of any existing dotfiles in ~"
@@ -22,14 +22,6 @@ for file in $files; do
 done
 
 #create symlinks
-echo "Creating symbolic link for zshrc"
-ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
-echo "...done"
-
-echo "Creating symbolic link for oh-my-zsh"
-ln -s ~/.dotfiles/zsh/oh-my-zsh ~/.oh-my-zsh
-echo "...done"
-
 echo "Creating symbolic link for vimrc"
 ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
 echo "...done"
