@@ -1,4 +1,14 @@
-**Aliases**
+**FISH DOCUMENTATION**
+https://fishshell.com/docs/current/index.html
+
+**FIND COMMAND**
+When using -exec with the find command you need to place the curly brace in single quotes.
+Example:
+	find . -type f -exec cp '{}' test/ \;
+this is because in fish using the {} does brace expansion. You need to put it in single quotes so no errors
+will occur
+
+**ALIASES**
 to create aliases like you would with bash/zsh all you need to type is the following:
 alias <command>='<what you want command to be>'
 
