@@ -1,6 +1,18 @@
 **FISH DOCUMENTATION**
 https://fishshell.com/docs/current/index.html
 
+**POWERLINE**
+If you have powerline installed on your machine and have problems with it showing up within tmux try running this
+command in fish.
+
+powerline-config tmux setup; tmux
+
+This command might need to be run after every system restart. In order to solve this problem the following solution might be helpful. Place this in your "config.fish" file
+
+if string match -q 'screen*' -- $TERM
+	powerline-config tmux setup
+end
+
 **FIND COMMAND**
 When using -exec with the find command you need to place the curly brace in single quotes.
 Example:
@@ -32,3 +44,11 @@ cat ~/.config/fish/functions/mp4.fish
 function mp4 --description 'alias mp4=vlc *.mp4'
 	vlc *.mp4 $argv;
 end
+
+**COMMANDS**
+- dirh: Shows the last 25 directories you were in. The highlighted directory is the current one you are in. You
+	can select a previous directory with "prevd <number>" or a more recent directory with "nextd <number".
+	You can also move forward/backward in the listed dirs by using <alt-leftarrow> and <alt-rightarrow>
+
+- cdh: Similar to dirh, but just lists recent directories. It allows you to quickly switch to the desired dir
+	by entering in either the letter/number that is next to the dir name

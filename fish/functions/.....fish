@@ -1,4 +1,4 @@
 # Defined in - @ line 0
-function .... --description 'alias ....=cd'
-	cd  $argv;
+function .... --description 'alias ....=cd ../../../'
+	cd ../../../ $argv;
 end
