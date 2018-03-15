@@ -1,0 +1,19 @@
+**Downloading already running stream from beginning**
+
+streamlink --hls-live-edge 99999 --hls-segment-threads 5 -o "[FILE_NAME].ts" '[URL]' best
+
+streamlink - the program
+--hls-live-edge 99999 - How many segments from the end you will start recording from. The higher the number the
+			further back you will go. Use this if a stream is already being recorded and you want
+			your recording to begin from the start
+--hls-segment-threads 5 - The size of the thread pool used to download HLS segments. Min is 1, Max is 10, Default is 1
+
+-o "[FILE_NAME].ts" - -o stands for output. This means it will save the file with the "[FILE_NAME].ts" given.
+		      Make sure to include .ts in the file name
+'[URL]' - the url of the stream you are looking to download
+best - the quality of the stream. Best automatically defaults to the best quality possible, but if you enter in 
+	"streamlink '[URL]'" you will be able to see all availible qualities
+
+**Convert .ts to .mkv**
+
+ffmpeg -i [INPUT_FILE_NAME].ts -c:v copy -c:a aac -strict -2 [OUTPUT_FILE_NAME].mkv
