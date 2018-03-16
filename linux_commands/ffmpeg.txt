@@ -1,0 +1,38 @@
+**Splitting Video**
+
+To split video by copy sections of the original video into different parts use the following command.
+
+ffmpeg -ss 00:00:00 -t 01:23:45 -i inputfile.ext -c:v copy -c:a aac -strict -2 outputname.ext
+
+ffmpeg - the command
+-ss - starting position (in time) to begin the copy. It goes Hours:Minutes:Seconds. 00:00:00 -> start at Hour 0
+      Minute 0, Second 0
+-t - the time position to record to. Just like -ss it goes by Hours:Minutes:Seconds. 01:23:45 -> Go to Hour 1
+     Minute 23 and the 45th Second
+-i - Input. The following parameter will be the file ffmpeg performs the command on
+-c:v copy - Tells ffmpeg to copy the video stream
+-c:a aac -strict -2 - Tells ffmpeg to copy the audio stream using aac. The -strict -2 are required to get ffmpeg
+		      to use aac (using ffmpeg version 2.8.11. This might not be needed in the future)
+outputname.ext - This is the name of the file and extension that ffmpeg will save to. 
+
+**Splitting Video Into Multiple Parts**
+
+If you want to break up video into multiple parts, it is the same commmand as splitting video, you just change the parameters for -ss and -t
+
+Part 1:
+
+ffmpeg -ss 00:00:00 -t 01:23:45 -i inputfile.ext -c:v copy -c:a aac -strict -2 outputname1.ext
+
+ffmpeg -ss 01:23:45 -t 06:78:90 -i inputfile.ext -c:v copy -c:a aac -strict -2 outputname2.ext
+
+the first command will copy the video starting at the very beginning (00:00:00) until the time 01:23:45. It will save all video and audio between this time range to the file "outputname1.ext"
+
+the second command will begin at 01:23:45 (where the first command left off) and copy until 06:78:90 (assuming the end of the video) and copy video and audio to the file "outputname2.ext"
+
+to break up into further parts all that needs to be done it using the -t time from the previous command as the parameter for -ss in the current command, then deciding where you want the copy to end with -t. Then repeat. 
+
+Example:
+-s 00:00:00 -t 00:30:00
+-s 00:30:00 -t 01:00:00
+-s 01:00:00 -t 01:30:00
+
