@@ -1,0 +1,44 @@
+**This guide assumes that the new disk is located at /dev/sdb. This might not be the same location during reboots**
+
+**Make sure you have "parted" installed on your machine**
+
+sudo apt update
+sudo apt install parted
+
+**Identify New Disk on the System**
+sudo parted -l | grep Error
+
+	or
+
+lsblk (will show you disks in a tree)
+
+**Set Partition Standard**
+
+sudo parted /dev/sdb mklabel gpt
+
+**Create the New Partition**
+
+sudo parted -a opt /dev/sdb mkpart primary ext4 0% 100%
+
+**Create Filesystem on the New Partition**
+
+sudo mkfs.ext4 -L <name for the partition> /dev/sdb1
+
+*If you want to add a name make sure to include -L and then the name
+*make sure you choose the actual partition and not the disk. The disk in this example is sdb. The partition is sdb1
+**Edit the partition label**
+
+sudo e2label /dev/sdb1 newlabel
+
+**Immediatly Mount New Drive**
+
+sudo mount -o defaults /dev/sdb1 /mnt/<location>
+
+**Mount File System on Boot**
+
+sudo vim /etc/fstab
+
+# The colums that are needed when adding a drive to fstab
+# HDD Identifier	Mounting location	FS type	   Mount Options	dump Option	fs check
+UUID=<UUID GOES HERE>	/mnt/<location>		ext4	   defaults		0		2
+

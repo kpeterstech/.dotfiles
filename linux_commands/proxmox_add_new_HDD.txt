@@ -1,0 +1,22 @@
+**This guide assumes that the new HDD is already formatted. It should be formatted as a GPT drive with a fs type of ext4. Ideally it should be labeled with the HDD serial number. See format_new_hdd.txt**
+
+1) Write down Serial Number of new HDD
+
+2) Physically add new HDD to server
+
+3) Make the HDD is found by the server
+
+ls -l /dev/disk/by-id/ata-* | grep -i <HDD_SERIAL_NUMBER>
+(the serial number should be within the HDD id)
+
+4) Find which VM you want to add it to by listing all current VMs
+
+qm list
+
+5) Pass HDD to VM
+
+# qm set VM_ID  VIRTIO_NUMBER    HDD_ID_TO_PASS
+  qm set  100    -virtio<num>    /dev/disk/by-id/<HDD ID>
+
+Example:
+qm set 100 -virtio2 /dev/disk/by-id/ata-ST3000DM001-1CH166_Z1F4B19R
