@@ -31,4 +31,4 @@ SET fish_pager_color_completion:\x1d
 SET fish_pager_color_description:B3A06D\x1eyellow
 SET fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SET fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SET fish_user_abbreviations:gs\x20git\x20status\x1ega\x20git\x20add\x1egaa\x20git\x20add\x20\x2dA\x1egb\x20git\x20branch\x1egbd\x20git\x20branch\x20\x2d\x2ddelete\x1egc\x20git\x20commit\x1egco\x20git\x20checkout\x1egp\x20git\x20push\x1egpom\x20git\x20push\x20origin\x20master\x1egplom\x20git\x20pull\x20origin\x20master
+SET fish_user_abbreviations:gs\x20git\x20status\x1ega\x20git\x20add\x1egaa\x20git\x20add\x20\x2dA\x1egb\x20git\x20branch\x1egbd\x20git\x20branch\x20\x2d\x2ddelete\x1egc\x20git\x20commit\x1egco\x20git\x20checkout\x1egp\x20git\x20push\x1egpom\x20git\x20push\x20origin\x20master\x1egplom\x20git\x20pull\x20origin\x20master\x1egrep\x20egrep\x1edc\x20docker\x2dcompose\x1edcstart\x20docker\x2dcompose\x20start\x1edcstop\x20docker\x2dcompose\x20stop

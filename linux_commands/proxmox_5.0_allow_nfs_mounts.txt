@@ -1,0 +1,15 @@
+in order to allow nfs mounts in a proxmox container you need to edit the following files
+
+- cd /etc/apparmor.d/lxc
+
+add the following to lxc-defaults and lxc-default-cgns
+
+`
+# allow nfs mount everywhere
+mount fstype=rpc_pipefs,
+mount fstype=nfs,
+`
+
+- /etc/init.d/apparmor reload
+
+restart the containers and you should now be able to add nfs mounts

@@ -1,0 +1,76 @@
+This process was done with ubuntu server 16.04
+
+- install ubuntu server 16.04
+
+- find out what the current ip address and broadcast address of the machine is
+`ifconfig`
+
+- after install create static ip address
+`sudo vim /etc/network/interfaces`
+
+- change your eth0 from dhcp to static. It should look like the following
+
+`auto eth0
+iface eth0 inet static
+ address 192.168.1.252 <whatever you want>
+ netmask 255.255.255.0
+ broadcast 192.168.1.255 <what you copied down from ifconfig>
+ gateway 192.168.1.1 <most likely, could also be 192.168.2.1>
+`
+
+- restart your networking
+`/etc/init.d/networking restart`
+
+- update and upgrade the machine
+`sudo apt update -y && sudo apt upgrade -y`
+
+- install the following packages
+`sudo apt install openssh-server samba smbclient cifs-utils ntp ntpdate`
+
+- create the directories that you want to share
+`mkdir /files`
+`mkdir /files/share`
+
+- give the folders full permission
+`chmod 777 -R /files`
+
+- edit the samba config file
+`sudo vim /etc/samba/smb.conf`
+
+- add your directory info at the bottom. The format is:
+[Broadcast Name]
+ comment = <name>
+ path = <path to directory>
+ browseable = <yes/no>
+ read only = <yes/no>
+
+ Example:
+ [storage_pool]
+  path = /mnt/pool
+  browseable = yes
+  read only = no
+
+- create a samba username and password
+`sudo smbpasswd -a <username>`
+
+- restart the computer
+`sudo reboot`
+
+- Connecting to the server from another linux machine. Fist edit the fstab
+`sudo vim /etc/fstab`
+
+- at the bottom place the following
+`//IP-ADDRESS/BROADCASTNAME /mount/location cifs uid=1000,gid=1000,credentials=$HOME/.network_pw,iocharset=utf8 0 0`
+
+- cd to home directory
+`cd $HOME`
+
+- create a new file that will store your samba user name and password
+`vim .network_pw`
+
+- type in the username and password. Each on their own line with no spaces
+username=user
+password=drowssap
+
+- mount the samba share
+`sudo mount -a`
