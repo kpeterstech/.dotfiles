@@ -1,0 +1,3 @@
+in order to fix gifs that are unable to be opened with eog (on ubuntu) the following command can repair them
+
+`convert <file> -coalesce <new_file>`

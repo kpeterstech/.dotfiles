@@ -1,0 +1,7 @@
+See local files that you have uploaded
+
+`ipfs pin ls --type=recursive`
+
+Search for the name of a file you added
+
+ipfs pin ls --type=recursive -q | xargs -L 1 ipfs ls | egrep -i <file>
