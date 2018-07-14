@@ -52,7 +52,6 @@ do
 		mkdir vids 2> /dev/null
 		mv $file vids
 
-
 	elif [[ $extension == "mkv" ]]; then
 		mkdir vids 2> /dev/null
 		mv $file vids
