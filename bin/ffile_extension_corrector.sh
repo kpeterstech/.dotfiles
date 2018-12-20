@@ -62,6 +62,9 @@ do
 	elif [[ $extension == "video/x-wav" ]]; then
 		mv $file $basename.wav
 
+	elif [[ $extension == "audio/x-m4a" ]]; then
+		mv $file $basename.m4a
+
 	else
 		echo "$file is not a normal file. Its type is $extension"
 	fi

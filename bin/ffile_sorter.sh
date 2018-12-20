@@ -76,5 +76,9 @@ do
 		mkdir audio 2> /dev/null
 		mv $file audio
 
+	elif [[ $extension == "m4a" ]]; then
+		mkdir audio 2> /dev/null
+		mv $file audio
+
 fi
 done <<< $(find . -maxdepth 1 -type f)

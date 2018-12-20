@@ -4,5 +4,5 @@ for f; do
   ffmpeg -i "$f" -qscale:a 0 "${f[@]/%flac/mp3}"
 done
 
-mkdir mp3
-mv *.mp3 mp3/
+mkdir "${PWD##*/} - mp3"
+mv *.mp3 "${PWD##*/} - mp3/"

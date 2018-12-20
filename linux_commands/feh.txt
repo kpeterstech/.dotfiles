@@ -1,0 +1,21 @@
+Commands:
+
+-f - open up a file list (.m3u)
+
+-Y - hide pointer during a slideshow
+
+-F - Fullscreen. Also sets unfilled background to black
+
+-Dn - -D sets the delay between slides for a slideshow. The `n` is how many seconds between slides
+
+Keybindings:
+
+d - toggles filenames on top of the picture
+
+h - pauses a slideshow
+
+o - toggles pointer visibility (useful for presentations)
+
+(Home) - Jump to the first image in slideshow
+
+(End) - Jump to the last image in slideshow

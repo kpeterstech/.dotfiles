@@ -20,6 +20,6 @@ wget -w 10 --random-wait
 -w = wait (tells wget how many seconds to wait before downloading the next file)
 --random-wait = makes wget wait between 0.5 and 1.5 seconds before downloading the next file. (good to do if the website blocks mass downloads as fast as possible. If there is a -w before --random-wait it takes that number than adds a difference of 0.5 and 1.5 seconds to it. Example= -w 10 --random-wait == 10.5-11.5 seconds)
 
-wget -r -l 2 -H -nd -e robots = off -R '*.html*'
+wget -r -l 2 -H -nd -e robots=off -R '*.html*'
 
 -R = reject a pattern. Can string multiple when seperated by a comma (,). 

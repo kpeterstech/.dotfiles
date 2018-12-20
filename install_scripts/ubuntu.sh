@@ -51,6 +51,9 @@ sudo sh -c 'apt-get install python3-venv'
 # install youtube_dl via pip
 sudo sh -c 'pip3 install --upgrade youtube_dl'
 
+# install tldr, a community driven man page alternative
+sudo sh -c 'pip install tldr'
+
 # upgrades machine
 sudo sh -c 'apt-get upgrade -y'
 
