@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# split-window -v : splits window vertically (a line from left to right)
+# split-window -h : splits window horizontally (a line from top to bottom)
+# select-pane -t : selects the window pane (so you can run commands). -t is the number of the pane
+# new-window : creates a new window within the session
+# send-keys : sends keys the be run within the pane. Must be quoted and end with 'C-m' to send the command
+# select-window -t : selects the window. -t in the number of the window
+
+# https://stackoverflow.com/questions/5609192/how-to-set-up-tmux-so-that-it-starts-up-with-specified-windows-opened
+
+tmux new-session \; \
+	split-window -v -p 50 \; \
+	split-window -v -p 50 \; \
+	split-window -h \; \
+	select-pane -t 2 \; \
+	split-window -v \; \
+	select-pane -t 1 \; \
+	new-window \; \
+	split-window -v -p 33 \; \
+	select-pane -t 1 \; \
+	split-window -v -p 50 \; \
+	select-pane -t 3 \; \
+	send-keys 'fish --private' C-m \; \
+	select-pane -t 2 \; \
+	send-keys 'fish --private' C-m \; \
+	select-pane -t 1 \; \
+	send-keys 'fish --private' C-m \; \
+	select-window -t 1 \; \
+
