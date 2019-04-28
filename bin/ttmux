@@ -10,21 +10,36 @@
 # https://stackoverflow.com/questions/5609192/how-to-set-up-tmux-so-that-it-starts-up-with-specified-windows-opened
 
 tmux new-session \; \
+	split-window -v -p 33 \; \
+	select-pane -t 1 \; \
+	split-window -v -p 50 \; \
+	select-pane -t 3 \; \
+	send-keys 'clear' C-m \; \
+	select-pane -t 2 \; \
+	send-keys 'clear' C-m \; \
+	select-pane -t 1 \; \
+	send-keys 'clear' C-m \; \
+	send-keys 'htop' C-m \; \
+	select-pane -t 2 \; \
+	new-window \; \
 	split-window -v -p 50 \; \
 	split-window -v -p 50 \; \
 	split-window -h \; \
 	select-pane -t 2 \; \
 	split-window -v \; \
-	select-pane -t 1 \; \
-	new-window \; \
-	split-window -v -p 33 \; \
-	select-pane -t 1 \; \
-	split-window -v -p 50 \; \
+	select-pane -t 5 \; \
+	send-keys 'fish --private' C-m \; \
+	send-keys 'clear' C-m \; \
+	select-pane -t 4 \; \
+	send-keys 'fish --private' C-m \; \
+	send-keys 'clear' C-m \; \
 	select-pane -t 3 \; \
 	send-keys 'fish --private' C-m \; \
+	send-keys 'clear' C-m \; \
 	select-pane -t 2 \; \
 	send-keys 'fish --private' C-m \; \
+	send-keys 'clear' C-m \; \
 	select-pane -t 1 \; \
 	send-keys 'fish --private' C-m \; \
+	send-keys 'clear' C-m \; \
 	select-window -t 1 \; \
-
