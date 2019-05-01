@@ -10,7 +10,7 @@ sudo parted -l | grep Error
 
 	or
 
-lsblk (will show you disks in a tree)
+lsblk -f (will show you disks in a tree)
 
 **Set Partition Standard**
 
