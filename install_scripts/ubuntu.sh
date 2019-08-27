@@ -48,6 +48,9 @@ sudo sh -c 'pip3 install --upgrade pip'
 # install venv for python3
 sudo sh -c 'apt-get install python3-venv'
 
+# install venv for python3.6
+sudo sh -c 'apt-get install python3.6-venv'
+
 # install youtube_dl via pip
 sudo sh -c 'pip3 install --upgrade youtube_dl'
 

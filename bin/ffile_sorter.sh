@@ -40,6 +40,10 @@ do
 		mkdir vids 2> /dev/null
 		mv $file vids
 
+	elif [[ $extension == "m4v" ]]; then
+		mkdir vids 2> /dev/null
+		mv $file vids
+
 	elif [[ $extension == "webm" ]]; then
 		mkdir vids 2> /dev/null
 		mv $file vids
@@ -65,6 +69,10 @@ do
 		mv $file vids
 
 	elif [[ $extension == "mpg" ]]; then
+		mkdir vids 2> /dev/null
+		mv $file vids
+
+	elif [[ $extension == "3gp" ]]; then
 		mkdir vids 2> /dev/null
 		mv $file vids
 
