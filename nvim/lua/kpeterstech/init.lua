@@ -1,0 +1,7 @@
+require('kpeterstech/telescope')
+require('kpeterstech/lightline')
+require('kpeterstech/gitsigns')
+require('kpeterstech/lsp')
+require('kpeterstech/treesitter')
+require('kpeterstech/luasnip')
+require('kpeterstech/comment')

@@ -2,3 +2,6 @@
 
 private/
 all_scripts/
+# undodir/
+nvim/undodir/
+nvim/plugged/

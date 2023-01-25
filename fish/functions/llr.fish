@@ -1,4 +1,4 @@
 # Defined in - @ line 0
-function llr --description 'alias llr=ll -r'
-	ll -r $argv;
+function llr --description 'alias llr=ll -rN'
+	ll -rN $argv;
 end

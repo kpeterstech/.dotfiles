@@ -62,6 +62,9 @@ iface eth0 inet static
 - at the bottom place the following
 `//IP-ADDRESS/BROADCASTNAME /mount/location cifs uid=1000,gid=1000,credentials=$HOME/.network_pw,iocharset=utf8 0 0`
 
+Example:
+`//192.168.0.123/storage_pool /mount/location cifs uid=1000,gid=1000,credentials=$HOME/.network_pw,iocharset=utf8 0 0`
+
 - cd to home directory
 `cd $HOME`
 

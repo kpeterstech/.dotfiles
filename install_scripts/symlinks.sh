@@ -34,4 +34,8 @@ echo "Creating symbolic link for ~/bin/"
 ln -s ~/.dotfiles/bin ~/bin
 echo "...done"
 
+echo "Creating symbolic link for ~/.config/nvim/"
+ln -s ~/.dotfiles/nvim/ ~/.config/nvim
+echo "...done"
+
 echo "All symlinks created"

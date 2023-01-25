@@ -1,4 +1,4 @@
 # Defined in - @ line 0
-function lla --description 'alias lla=ls -la'
-	ls -la $argv;
+function lla --description 'alias lla=ls -lahN'
+	ls -lahN $argv;
 end
