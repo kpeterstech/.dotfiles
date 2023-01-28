@@ -1,3 +1,3 @@
 function en
-	nvim ~/.config/nvim/init.vim
+    nvim ~/.config/nvim/
 end
