@@ -1,3 +1,3 @@
 function ev
-	vim ~/.vimrc
+    vim ~/.vimrc
 end

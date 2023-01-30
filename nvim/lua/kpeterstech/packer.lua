@@ -5,6 +5,8 @@ return require('packer').startup(function(use)
     use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
     use 'lukas-reineke/indent-blankline.nvim'
+    use 'nvim-tree/nvim-web-devicons' -- optional, for file icons
+    use 'nvim-tree/nvim-tree.lua'
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -57,5 +59,6 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+
 
 end)

@@ -1,3 +1,3 @@
 function et
-	vim ~/.tmux.conf
+    nvim ~/.tmux.conf
 end
