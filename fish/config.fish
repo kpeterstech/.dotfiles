@@ -32,7 +32,7 @@ set -g fish_prompt_pwd_dir_length 0
 set -g theme_project_dir_length 1
 
 if string match -q 'screen*' -- $TERM
-	powerline-config tmux setup
+    powerline-config tmux setup
 end
 
 set -xg PYTHONPATH /usr/bin/python3 $PYTHONPATH

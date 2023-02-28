@@ -31,6 +31,9 @@ vim.keymap.set("n", "tj", ":tabprev<CR>")
 vim.keymap.set("n", "th", ":tabfirst<CR>")
 vim.keymap.set("n", "tl", ":tablast<CR>")
 
+vim.keymap.set("n", "tsj", ":split<CR>")
+vim.keymap.set("n", "tsl", ":vsplit<CR>")
+
 vim.keymap.set("i", "<leader>'", "''<ESC>i")
 vim.keymap.set("i", '<leader>"', '""<ESC>i')
 vim.keymap.set("i", "<leader>(", "()<ESC>i")

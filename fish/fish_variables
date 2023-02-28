@@ -26,6 +26,7 @@ SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR _fish_abbr_ipfsadd:ipfs\x20add\x20\x2d\x2dnocopy
 SETUVAR _fish_abbr_llt:ll\x20\x2dt
 SETUVAR _fish_abbr_nv:nvim
+SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:707A8C
 SETUVAR fish_color_cancel:\x2d\x2dreverse
 SETUVAR fish_color_command:5CCFE6
