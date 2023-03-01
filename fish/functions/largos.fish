@@ -1,3 +1,3 @@
 function largos
-	ls -largoSh
+ls -largoSh
 end

@@ -12,6 +12,7 @@ sudo sh -c "echo 'Thank you!'"
 echo "First off, which shell would you like to use? (it will be set to your default shell)"
 echo "1) zsh"
 echo "2) fish"
+echo "3) nu"
 read SHELL_TYPE
 
 # update from repositories
@@ -19,40 +20,31 @@ sudo sh -c 'apt-get update'
 
 # install all desired programs.
 sudo sh -c 'apt-get -y install \
-	sudo \
-	# need vim-gtk for vim to be able to us system clipboard
-	vim-gtk \
-	vim \
-	tmux \
-	git \
-	make \
-	htop \
-	wget \
-	curl \
-	guake \
-	python-pip \
-	python3-pip \
-	unrar-free \
-	vlc \
-	unzip \
-	build-essential \
-	openssh-server \
-	p7zip-full \
-	tree \
-	fdupes \
-'
+    sudo \
+    # need vim-gtk for vim to be able to us system clipboard
+    vim-gtk \
+        vim \
+        tmux \
+        git \
+        make \
+        htop \
+        wget \
+        curl \
+        guake \
+        python-pip \
+        python3-pip \
+        unrar-free \
+        vlc \
+        unzip \
+        build-essential \
+        openssh-server \
+        p7zip-full \
+        tree \
+        fdupes \
+        '
 
 # install latest version of pip
 sudo sh -c 'pip3 install --upgrade pip'
-
-# install venv for python3
-sudo sh -c 'apt-get install python3-venv'
-
-# install venv for python3.6
-sudo sh -c 'apt-get install python3.6-venv'
-
-# install youtube_dl via pip
-sudo sh -c 'pip3 install --upgrade youtube_dl'
 
 # install tldr, a community driven man page alternative
 sudo sh -c 'pip install tldr'
@@ -71,34 +63,21 @@ sudo sh -c '/bin/bash ~/.dotfiles/install_scripts/powerline_install.sh'
 # add symbolic links for vimrc,tmux.conf,~/bin
 sudo sh -c '/bin/bash ~/.dotfiles/install_scripts/symlinks.sh'
 
-# download github repos
-sudo sh -c '/bin/bash ~/.dotfiles/install_scripts/github.sh'
-
-# adds local 2.5 HDD if on home computer
-if [[ -e ~/.dotfiles/private/.2.5_HDD_add.sh ]]; then
-	sudo sh -c '/bin/bash ~/.dotfiles/private/.2\.5_HDD_add.sh'
-else
-	echo "Script to install 2.5 TB HDD not found"
-fi
-
-# adds access to local server if on same network
-if [[ -e ~/.dotfiles/private/.server_add.sh ]]; then
-	sudo sh -c '/bin/bash ~/.dotfiles/private/.server_add.sh'
-else
-	echo "Script to add server not found"
-fi
-
 # install and configure the user shell that was selected above
 if [[ SHELL_TYPE -eq 1 ]]; then
-	bash ~/.dotfiles/install_scripts/install_zsh.sh
+    bash ~/.dotfiles/install_scripts/install_zsh.sh
 
 elif [[ SHELL_TYPE -eq 2 ]]; then
-	bash ~/.dotfiles/install_scripts/install_fish.sh
+    bash ~/.dotfiles/install_scripts/install_fish.sh
+
+elif [[ SHELL_TYPE -eq 3 ]]; then
+    bash ~/.dotfiles/install_scripts/install_nu.sh
 
 else 
-	bash ~/.dotfiles/install_scripts/install_zsh.sh
+    bash ~/.dotfiles/install_scripts/install_zsh.sh
 
 fi
+
 # prompt for a reboot
 echo ""
 echo "================="
