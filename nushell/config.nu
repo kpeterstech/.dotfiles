@@ -659,6 +659,10 @@ def httpg [url: string, name: string] {
     http get $url | save $name
     }
 
+def lsfi [name: string] {
+    ls | where name =~ $name
+    }
+
 alias s = source ~/.config/nushell/config.nu
 alias config = nvim ~/.config/nushell/config.nu
 alias mk = (echo 'test'; echo 'hello')
@@ -670,7 +674,8 @@ alias c = clear
 
 alias ll = ls -l
 alias la = ls -a
-alias ld = (ls | where type == dir)
+alias lsd = (ls | where type == dir)
+alias lsf = (ls | where type == file)
 alias lla = ls -la
 
 alias cp = cp -v
@@ -682,6 +687,7 @@ alias e = exa
 alias ed = exa -D
 alias el = exa -l
 alias er = exa -r
+alias et = exa -T
 alias eda = exa -laD
 alias ela = exa -la
 alias eld = exa -l -D
@@ -709,6 +715,20 @@ alias png = eog *.png
 alias webm = vlc *.webm
 
 alias num = (exa | wc -l)
+alias d = dust
+alias dd = dust -D
+
+alias ga = git add
+alias gb = git branch
+alias gc = git commit
+alias gm = git merge
+alias gs = git status
+alias gl = git log
+alias gaa = git add -A
+alias gco = git checkout
+alias gst = git stash
+alias gpom = git push origin master
+alias gpod = git push origin dev
 
 source ~/.zoxide.nu
 # source ~/.cache/starship/init.nu
