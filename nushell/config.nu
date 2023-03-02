@@ -680,7 +680,7 @@ alias lla = ls -la
 
 alias cp = cp -v
 alias dfh = df -h
-alias mv = mv -v
+# alias mv = mv -v
 alias rr = rm -rf
 
 alias e = exa
@@ -721,6 +721,7 @@ alias dd = dust -D
 alias ga = git add
 alias gb = git branch
 alias gc = git commit
+alias gd = git diff
 alias gm = git merge
 alias gs = git status
 alias gl = git log
@@ -731,5 +732,6 @@ alias gpom = git push origin master
 alias gpod = git push origin dev
 
 source ~/.zoxide.nu
+source ~/.oh-my-posh-theme.nu
 # source ~/.cache/starship/init.nu
 # source ~/.config/starsip.toml
