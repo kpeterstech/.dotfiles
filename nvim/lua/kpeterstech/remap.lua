@@ -38,7 +38,11 @@ vim.keymap.set("i", "<leader>'", "''<ESC>i")
 vim.keymap.set("i", '<leader>"', '""<ESC>i')
 vim.keymap.set("i", "<leader>(", "()<ESC>i")
 vim.keymap.set("i", "<leader>[", "[]<ESC>i")
+vim.keymap.set("i", "<leader><", "<><ESC>i")
 vim.keymap.set("i", "<leader>{", "{}<ESC>i")
+vim.keymap.set("i", "<leader>}", "{}<ESC>i<CR><ESC><S-O>")
+vim.keymap.set("i", "<leader>;}", "{};<ESC>hi<CR><ESC><S-O>")
+
 
 vim.keymap.set("i", '<leader>f"', 'f""<ESC>i')
 vim.keymap.set("i", "<leader>f'", "f''<ESC>i")

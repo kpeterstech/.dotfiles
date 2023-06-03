@@ -1,3 +1,3 @@
 function netw
- cd /mnt/network_storage/FTP/; 
+ cd /mnt/storage_pool/FTP/; 
 end

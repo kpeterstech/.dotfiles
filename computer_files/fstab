@@ -1,0 +1,4 @@
+
+//192.168.x.xxx/storage /mnt/storage_pool cifs uid=1000,gid=1000,username=xxxxxxx,password=xxxxxx 0 0
+
+/mnt/data* /mnt/storage fuse.mergerfs defaults,nonempty,allow_other,use_ino,cache.files=off,moveonenospc=true,dropcacheonclose=true,minfreespace=20G,category.create=mfs,fsname=mergerfs 0 0

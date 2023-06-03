@@ -68,4 +68,4 @@ SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
 SETUVAR fish_user_abbreviations:gs\x20git\x20status\x1ega\x20git\x20add\x1egaa\x20git\x20add\x20\x2dA\x1egb\x20git\x20branch\x1egbd\x20git\x20branch\x20\x2d\x2ddelete\x1egc\x20git\x20commit\x1egco\x20git\x20checkout\x1egp\x20git\x20push\x1egpom\x20git\x20push\x20origin\x20master\x1egplom\x20git\x20pull\x20origin\x20master\x1egrep\x20egrep\x1edc\x20docker\x2dcompose\x1edcstart\x20docker\x2dcompose\x20start\x1edcstop\x20docker\x2dcompose\x20stop\x1eipfsadd\x20ipfs\x20add\x20\x2d\x2dnocopy\x1ed\x20docker\x1edrit\x20docker\x20run\x20\x2dit\x1edritrm\x20docker\x20run\x20\x2dit\x20\x2d\x2drm\x1ellt\x20ll\x20\x2dt
-SETUVAR fish_user_paths:/home/beard/\x2elocal/share/bob/nvim\x2dbin\x1e/home/beard/\x2elocal/bin\x1e/home/beard/bin\x1e/home/beard/\x2efzf/bin
+SETUVAR fish_user_paths:/home/beard/\x2ecargo/bin\x1e/home/beard/\x2elocal/share/bob/nvim\x2dbin\x1e/home/beard/\x2elocal/bin\x1e/home/beard/bin\x1e/home/beard/\x2efzf/bin

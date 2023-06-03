@@ -1,0 +1,43 @@
+{
+	"name": "Vimium C",
+	"@time": "5/2/2023, 3:15:44 PM",
+	"time": 1683065744192,
+	"environment": {
+		"extension": "1.99.99",
+		"platform": "linux",
+		"chromium": 111
+	},
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://mail.google.com/"
+		},
+		{
+			"passKeys": "- b f i n o r t x x ",
+			"pattern": ":https://192.168.0.254:8006/"
+		}
+	],
+	"keyLayout": 2,
+	"keyMappings": [
+		"#!no-check",
+		"unmap H",
+		"unmap L",
+		"unmap K",
+		"unmap n",
+		"unmap d",
+		"map h scrollLeft",
+		"map yl LinkHints.activateCopyLinkText",
+		"map s LinkHints.activateHover",
+		"map H previousTab",
+		"map L nextTab",
+		"map <a-j> goBack",
+		"map <a-k> goForward",
+		"map d scrollDown",
+		"map D scrollPageDown",
+		"map e scrollUp",
+		"map E scrollPageUp",
+		""
+	],
+	"linkHintCharacters": "sadewcg",
+	"vimSync": true
+}

@@ -30,6 +30,7 @@ set -g default_user your_normal_user
 set -g theme_color_scheme solarized
 set -g fish_prompt_pwd_dir_length 0
 set -g theme_project_dir_length 1
+set -gx EDITOR hx
 
 if string match -q 'screen*' -- $TERM
     powerline-config tmux setup
@@ -37,4 +38,5 @@ end
 
 set -xg PYTHONPATH /usr/bin/python3 $PYTHONPATH
 
+oh-my-posh init fish --config ~/.poshthemes/powerlevel10k_rainbow.omp.json | source
 cd ~/

@@ -655,7 +655,7 @@ def mkcd [name: string] {
     mkdir $name; cd $name
     }
 
-def httpg [url: string, name: string] {
+def htg [url: string, name: string] {
     http get $url | save $name
     }
 
@@ -687,7 +687,6 @@ alias e = exa
 alias ed = exa -D
 alias el = exa -l
 alias er = exa -r
-alias et = exa -T
 alias eda = exa -laD
 alias ela = exa -la
 alias eld = exa -l -D
@@ -697,8 +696,8 @@ alias elar = exa -lar
 alias eltr = exa -l -s created -r
 alias largos = exa -la -s size
 
-alias dot = cd ~/.dotfiles/
-alias netw = cd /mnt/network_storage/FTP/
+alias dot = z ~/.dotfiles/
+alias netw = z /mnt/network_storage/FTP/
 
 alias en = nvim ~/.config/nvim/
 
@@ -733,5 +732,3 @@ alias gpod = git push origin dev
 
 source ~/.zoxide.nu
 source ~/.oh-my-posh-theme.nu
-# source ~/.cache/starship/init.nu
-# source ~/.config/starsip.toml

@@ -1,3 +1,4 @@
+# https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM)
 **This guide assumes that the new HDD is already formatted. It should be formatted as a GPT drive with a fs type of ext4. Ideally it should be labeled with the HDD serial number. See format_new_hdd.txt**
 
 1) Write down Serial Number of new HDD
@@ -17,6 +18,8 @@ qm list
 
 # qm set VM_ID  VIRTIO_NUMBER    HDD_ID_TO_PASS
   qm set  100    -virtio<num>    /dev/disk/by-id/<HDD ID>
+  qm set  100    -scsi<num>    /dev/disk/by-id/<HDD ID>
 
 Example:
 qm set 100 -virtio2 /dev/disk/by-id/ata-ST3000DM001-1CH166_Z1F4B19R
+qm set 100 -scsi /dev/disk/by-id/ata-ST3000DM001-1CH166_Z1F4B19R

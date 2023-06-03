@@ -68,6 +68,9 @@ do
 	elif [[ $extension == "audio/mpeg" ]]; then
 		mv $file $basename.mp3
 
+	elif [[ $extension == "text/html" ]]; then
+		mv $file $basename.html
+
 	else
 		echo "$file is not a normal file. Its type is $extension"
 	fi
