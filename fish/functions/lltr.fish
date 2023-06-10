@@ -1,4 +1,4 @@
 # Defined in - @ line 0
 function lltr --description 'alias lltr=exa -l -s time'
-	exa -l -s time $argv;
+	exa -l -r -s time $argv
 end

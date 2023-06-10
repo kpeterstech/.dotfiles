@@ -1,3 +1,3 @@
 function etc
- erd -H; 
+ erd -H $argv;
 end

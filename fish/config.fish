@@ -38,5 +38,28 @@ end
 
 set -xg PYTHONPATH /usr/bin/python3 $PYTHONPATH
 
+abbr -a -- dc docker-compose
+abbr -a -- dcstart 'docker-compose start'
+abbr -a -- dcstop 'docker-compose stop'
+abbr -a -- d docker
+abbr -a -- drit 'docker run -it'
+abbr -a -- dritrm 'docker run -it --rm'
+abbr -a -- gaa 'git add -A'
+abbr -a -- ga 'git add'
+abbr -a -- gbd 'git branch --delete'
+abbr -a -- gb 'git branch'
+abbr -a -- gc 'git commit'
+abbr -a -- gcm 'git commit -m'
+abbr -a -- gcob 'git checkout -b'
+abbr -a -- gco 'git checkout'
+abbr -a -- gd 'git diff'
+abbr -a -- gl 'git log'
+abbr -a -- gp 'git push'
+abbr -a -- gpom 'git push origin master'
+abbr -a -- gs 'git status'
+abbr -a -- gst 'git stash'
+abbr -a -- gstp 'git stash pop'
+abbr -a -- nv nvim
+
 oh-my-posh init fish --config ~/.poshthemes/powerlevel10k_rainbow.omp.json | source
 cd ~/

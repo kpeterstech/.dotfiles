@@ -1,41 +1,39 @@
 function extract
-    for file in $argv
-        switch $file
-            case "*.tar.bz2"
-                tar xjf $file
+    switch $argv[1]
+        case "*.tar.bz2"
+            tar xjf $argv[1]
 
-            case "*.tar.gz"
-                tar xzf $file
+        case "*.tar.gz"
+            tar xzf $argv[1]
 
-            case "*.bz2"
-                bunzip2 $file
+        case "*.bz2"
+            bunzip2 $argv[1]
 
-            case "*.rar"
-                unrar e $file
+        case "*.rar"
+            unrar e $argv[1]
 
-            case "*.gz"
-                gunzip $file
+        case "*.gz"
+            gunzip $argv[1]
 
-            case "*.tar"
-                tar xf $file
+        case "*.tar"
+            tar xf $argv[1]
 
-            case "*.tbz2"
-                tar xjf $file
+        case "*.tbz2"
+            tar xjf $argv[1]
 
-            case "*.tgz"
-                tar xzf $file
+        case "*.tgz"
+            tar xzf $argv[1]
 
-            case "*.zip"
-                unzip $file
+        case "*.zip"
+            unzip $argv[1]
 
-            case "*.Z"
-                uncompress $file
+        case "*.Z"
+            uncompress $argv[1]
 
-            case "*.7z"
-                7z x $file
+        case "*.7z"
+            7z x $argv[1]
 
-            case "*"
-                echo "unknown extension: $file"
-        end
+        case "*"
+            echo "unknown extension: $argv[1]"
     end
 end
